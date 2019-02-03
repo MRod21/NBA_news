@@ -1,17 +1,19 @@
 class Story
-  attr_accessor :title, :article_source, :url, :content
+  attr_accessor :title, :author, :url, :content
   @@all = []
+
+  def initialize(title, author, url)
+    @title = title
+    @author = author
+    @url = url
+    @@all << self
+  end
 
   def self.all
     @@all
   end
 
-  def title
-
-  end
-
-  def save
-    @@all << self
+  def content
   end
 
 end

@@ -1,5 +1,6 @@
 class Story
   attr_accessor :title, :author, :url, :content
+
   @@all = []
 
   def initialize

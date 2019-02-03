@@ -2,10 +2,7 @@ class Story
   attr_accessor :title, :author, :url, :content
   @@all = []
 
-  def initialize(title, author, url)
-    @title = title
-    @author = author
-    @url = url
+  def initialize
     @@all << self
   end
 

@@ -2,16 +2,14 @@ class Scraper
 
   def self.scrape_header
     doc = Nokogiri::HTML(open("http://www.sportingnews.com/us/nba/news"))
-    section = doc.css("ul.media-list")
-    array_of_titles = section.css("li.media")
+    stories = doc.css("ul.media-list li.media")
 
-    array_of_titles.map do |title|
-      title.text
+    stories.each do |post|
+      story = Story.new
+      story.title = post.css("a")[2].text
+      story.author = post.css("span.author a").text
+      story.url = post.css("a")[2]["href"]
     end
-
-
-    doc.css("ul.media-list li.media")[0].text
-    doc.css("ul.media-list li.media")[1].text
   end
 
   def scrape_details

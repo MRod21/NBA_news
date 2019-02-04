@@ -10,7 +10,7 @@ class Scraper
       story.author = info.css("span.author a").text
       story.url = info.css("a")[2]["href"]
     end
-    binding.pry
+    #binding.pry
   end
 
   def scrape_details

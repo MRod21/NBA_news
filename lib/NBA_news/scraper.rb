@@ -8,9 +8,9 @@ class Scraper
       story = Story.new
       story.title = info.css("h3.media-heading a").text
       story.author = info.css("span.author a").text
-      story.url = info.css("a")[2]["href"]
+      story.url = info.css("a")[1]["href"]
     end
-    #binding.pry
+    binding.pry
   end
 
   def scrape_details

@@ -10,10 +10,11 @@ class Scraper
       story.author = info.css("span.author a").text
       story.url = info.css("a")[1]["href"]
     end
-    binding.pry
   end
 
-  def scrape_details
+  def self.open_story(url)
+    doc = Nokogiri::HTML(open(Story.url))
+    binding.pry
   end
 
 end

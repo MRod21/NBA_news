@@ -11,7 +11,8 @@ class Story
     @@all
   end
 
-  def content
+  def content(url)
+    system ("open '#{{url}}'")
   end
 
 end

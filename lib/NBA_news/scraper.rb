@@ -11,10 +11,4 @@ class Scraper
       story.url = info.css("a")[1]["href"]
     end
   end
-
-  def self.open_story(url)
-    doc = Nokogiri::HTML(open(Story.url))
-    binding.pry
-  end
-
 end

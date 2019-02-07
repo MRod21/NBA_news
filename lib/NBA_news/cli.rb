@@ -20,6 +20,7 @@ class CLI
     while input != "exit"
       input = gets.strip
       if input.to_i
+        Story.all[input]
 
       end
     end

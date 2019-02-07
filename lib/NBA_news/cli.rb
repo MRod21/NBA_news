@@ -20,9 +20,10 @@ class CLI
     while input != "exit"
       input = gets.strip
       if input.to_i
-        Scraper.scrape
-        link = Story.all[input.to_i].url
-        system("open '#{link}'")
+        link = Story.all[input.to_i-1].url
+
+        link
+        system("xdg-open '#{link}'")
         #Story.content
       end
     end

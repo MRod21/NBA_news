@@ -14,17 +14,18 @@ class CLI
   end
 
   def menu
-    puts "What story would you like to read?"
-    input = ""
+    puts "What story would you like to read? (Select a number.)"
+        input = ""
 
     while input != "exit"
       input = gets.strip
       if input.to_i
-        Story.all[input]
-
+        Scraper.scrape
+        link = Story.all[input.to_i].url
+        system("open '#{link}'")
+        #Story.content
       end
     end
 
   end
-
 end

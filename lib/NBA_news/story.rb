@@ -11,8 +11,9 @@ class Story
     @@all
   end
 
-  def content(url)
-    system ("open '#{{url}}'")
-  end
+  #def self.content
+  #  system ("open '#{url}'")
+  #  binding.pry
+  #end
 
 end

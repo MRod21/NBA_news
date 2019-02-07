@@ -15,15 +15,15 @@ class CLI
 
   def menu
     puts "What story would you like to read? (Select a number.)"
-        input = ""
+    input = ""
 
     while input != "exit"
       input = gets.strip
       if input.to_i
+        main_site = "http://www.sportingnews.com"
         link = Story.all[input.to_i-1].url
-
-        link
-        system("xdg-open '#{link}'")
+        url = "#{main_site}#{link}"
+        system("open '#{url}'")
         #Story.content
       end
     end

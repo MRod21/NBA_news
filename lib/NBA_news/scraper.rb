@@ -12,7 +12,9 @@ class Scraper
       story.url = info.css("a")[1]["href"]
     end
 
-    def self.scrape_content
+    def self.scrape_content(object)
+
+      binding.pry
     end
 
   end

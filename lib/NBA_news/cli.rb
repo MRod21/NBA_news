@@ -18,11 +18,12 @@ class CLI
     puts "Would you like to read a story?"
     response = gets.strip.downcase
 
-    if response == "y" || respons == "yes"
+    if response == "y" || response == "yes"
       puts "What story would you like to read? (Select a number.)"
       input = gets.strip
-      binding.pry
-      if input.to_i
+      if input.to_i.between?(1, Story.all.size)
+        story_object = Story.all[input.to_i-1]
+        Scraper.scrape_content(story_object)
       #main_site = "http://www.sportingnews.com"
       #link = Story.all[input.to_i-1].url
       #url = "#{main_site}#{link}"

@@ -1,7 +1,8 @@
 class Scraper
+  MAIN_SITE = "http://www.sportingnews.com"
 
   def self.scrape
-    doc = Nokogiri::HTML(open("http://www.sportingnews.com/us/nba/news"))
+    doc = Nokogiri::HTML(open(MAIN_SITE + "/us/nba/news"))
     array_of_stories = doc.css("div.media-body")
 
     array_of_stories.each do |info|
@@ -10,5 +11,9 @@ class Scraper
       story.author = info.css("span.author a").text
       story.url = info.css("a")[1]["href"]
     end
+
+    def self.scrape_content
+    end
+
   end
 end

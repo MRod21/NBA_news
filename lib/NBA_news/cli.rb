@@ -15,29 +15,43 @@ class CLI
   end
 
   def menu
-    puts "\nWhat story would you like to read? (Select a number.)"
-    input = gets.strip.downcase
-    if input = input.to_i
-      main_site = "http://www.sportingnews.com"
-      link = Story.all[input.to_i-1].url
-      url = "#{main_site}#{link}"
-      system("open '#{url}'")
-    elsif input == "exit"
+    puts "Would you like to read a story?"
+    response = gets.strip.downcase
+
+    if response == "y" || respons == "yes"
+      puts "What story would you like to read? (Select a number.)"
+      input = gets.strip
+      binding.pry
+      if input.to_i
+      #main_site = "http://www.sportingnews.com"
+      #link = Story.all[input.to_i-1].url
+      #url = "#{main_site}#{link}"
+      #system("open '#{url}'")
+        puts "hello"
+      end
+    elsif response == "n" || response == "no"
       puts "Goodbye!"
     else
-      puts "Sorry, invalid input. Please select a story or exit."
-      list_stories
+      puts "I'm sorry. I did not get that. Please try again."
     end
+  end
+    #  if input == "exit"
+    #    puts "Goodbye!"
+    #  else
+    #    puts "Sorry, invalid input. Please select a story or exit."
+    #    list_stories
+    #  end
+
 
     def second_menu
       puts "Would you like to read another story?"
       answer = gets.strip.upcase
-      if answer.include?("Y, YES")
+      if answer.include? "Y", "YES"
         list_stories
-      elsif answer.include?("N, NO")
+      elsif answer.include? "N", "NO"
         puts "Goodbye!"
       end
     end
 
-  end
+
 end

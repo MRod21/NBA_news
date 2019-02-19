@@ -14,7 +14,6 @@ class Scraper
     end
 
     def self.scrape_content(object)
-      #binding.pry
       doc = Nokogiri::HTML(open(MAIN_SITE + object))
       x = doc.css("div.entry-content p").text.split(/[\\]/)
       x.each {|w| puts "#{w} "}

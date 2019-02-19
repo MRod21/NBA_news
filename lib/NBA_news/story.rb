@@ -12,16 +12,11 @@ class Story
   end
 
   def self.list_authors
-    self.all.map do |story|
-      story.author
-    end
-    binding.pry
+    self.all.map {|story| story.author}
   end
 
-  #def title=()
-  #def self.content
-  #  system ("open '#{url}'")
-  #  binding.pry
-  #end
+  def self.find_by_author(name)
+    self.all.find_all {|story| story.author == name} 
+  end
 
 end

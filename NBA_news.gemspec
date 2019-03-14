@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["'mario.rodriguez35@yahoo.com'"]
 
   spec.summary       = %q{A gem to see the latest stories in the NBA.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/MRod21/NBA_news"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

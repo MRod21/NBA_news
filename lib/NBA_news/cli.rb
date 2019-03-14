@@ -40,7 +40,7 @@ class CLI
     elsif response == "n" || response == "no"
       puts "Okay, maybe next time. Thanks for stopping by!".colorize(:yellow)
     else
-      puts "I'm sorry, I did not get that. Your options are 'yes' or 'no'".colorize(:yellow)
+      puts "I'm sorry, I did not get that. Please respond with a 'yes' or 'no'".colorize(:yellow)
       menu
     end
   end

@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "environment"
+require_relative "../lib/environment.rb"
 
 CLI.new.run
